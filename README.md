@@ -16,7 +16,7 @@ Git是一个“分布式版本管理工具”，简单的理解版本管理工�
 	- 本地仓库(简称：本地)：输入命令：`git commit 此次修改的描述`，此次改动就放到了’本地仓库’，每个commit，我叫它为一个‘版本’。
 	- 远程仓库(简称：远程)：输入命令：`git push 远程仓库`，此次改动就放到了‘远程仓库’（github等)
 	- commit-id：输出命令：`git log`，最上面那行`commit xxxxxx`，后面的字符串就是commit-id
-4. 如果喜欢这个项目，欢迎Star、提交Pr、[反馈问题](https://github.com/521xueweihan/git-tips/issues)😊
+4. 如果喜欢这个项目，欢迎Star、提交Pr、[反馈问题](https://github.com/guimeisang/git/issues)😊
 
 ## 目录
 * [展示帮助信息](#展示帮助信息)
@@ -498,7 +498,7 @@ git remote add origin <remote-url>
 
 
 ## 联系我
-- [桂梅桑](guimeisang.github.io)
+- [桂梅桑](https://guimeisang.github.io/)
 - 邮箱：<a href="mailto:792300489@qq.com">发邮件给我</a>
 - 或者直接提Pr，Issues
 
