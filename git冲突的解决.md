@@ -1,0 +1,1 @@
+[git冲突](https://github.com/guimeisang/Diary/blob/master/201610/20161014.md)
