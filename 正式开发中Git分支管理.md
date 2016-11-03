@@ -8,13 +8,13 @@
 
 ##　一、主分支Master
 首先，代码库应该有一个，且有一个主分支。所有提供用户使用的正式版本，都在这个主分支上面发布。
-![image](这是第一张图片的地址)
+![image](https://github.com/guimeisang/git/blob/master/img/bg1.png)
 
 Git主分支的名字，默认叫做Master，它是自动建立的。版本库初始化以后，默认就是在主干上面开发。
 
 ## 二、开发分支dev
 主分支主要是用来分布重大版本，日常开发应该在另一条分支上面完成的。我们把开发叫做dev
-![image](url)
+![image](https://github.com/guimeisang/git/blob/master/img/bg2.png)
 
 这个分支可以用来生成代码的最新隔夜版本(nightly)。如果是想正式对外发布，就在Master分支上，把master分之合并到dev（此时dev已经提前几个commit了）
 - Git创建dev分支
@@ -31,11 +31,11 @@ git merge --no-ff dev -m "将master分支merge到dev上去"
 ```
 在master分支上面merge完之后，还需要，对merge的文件进行 git commit和git push 命令！
 
- ![image](url)
+ ![image](https://github.com/guimeisang/git/blob/master/img/bg3.png)
 
  使用--no-ff参数后，会执行正常合并，在Master分支上生成一个新节点。为了保证版本演进的清晰，我们希望采用这种做法。关于合并的更多解释，请参考Benjamin Sandofsky的
  [《Understanding the Git Workflow》](http://sandofsky.com/blog/git-workflow.html)
-  ![image](url)
+  ![image](https://github.com/guimeisang/git/blob/master/img/bg4.png)
 
 ## 三、临时性分支
 
@@ -51,7 +51,7 @@ git merge --no-ff dev -m "将master分支merge到dev上去"
 
 接下来，一个个来看这三种"临时性分支"。
 第一种是功能分支，它是为了开发某种特定功能，从Develop分支上面分出来的。开发完成后，要再并入Develop。
- ![image](url)
+ ![image](https://github.com/guimeisang/git/blob/master/img/bg5.png)
 
 功能分支的名字，可以采用feature-*的形式命名。
 创建一个功能分支：
@@ -101,7 +101,7 @@ git branch -d release-1.2
 最后一种是修补bug分支。软件正式发布以后，难免会出现bug。这时就需要创建一个分支，进行bug修补。
 修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进Master和Develop分支。它的命名，可以采用fixbug-*的形式。
 
- ![image](url)
+ ![image](https://github.com/guimeisang/git/blob/master/img/bg6.png)
 
  创建一个修补bug分支：
  ```
