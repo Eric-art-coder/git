@@ -13,7 +13,7 @@
 
 ![image](https://github.com/guimeisang/git/blob/master/img/git%E5%85%A5%E9%97%A8%E5%9F%BA%E6%9C%AC%E5%9B%BE.jpg)
 
-## 一、==git clone==
+## 一、git clone
 远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。
 
 ```
@@ -37,7 +37,7 @@ $ git clone rsync://example.com/path/to/repo.git/
 ```
 **通常来说，Git协议下载速度最快，SSH协议用于需要用户认证的场合。各种协议优劣的详细讨论请参考[官方文档](http://git-scm.com/book/en/Git-on-the-Server-The-Protocols)。**  
 
-## 二、==git remote== 
+## 二、git remote
 为了便于管理，Git要求每个远程主机都必须指定一个主机名。**git remote命令就用于管理主机名**。  
 不带选项的时候，git remote命令列出所有远程主机。
 
@@ -60,22 +60,22 @@ $ git clone -o jQuery https://github.com/jquery/jquery.git
 $ git remote
 jQuery
 ```
-==git remote show==命令加上主机名，可以查看该主机的详细信息。  
+git remote show命令加上主机名，可以查看该主机的详细信息。
 
 ```
 $ git remote show <主机名>
 ```
-==git remote add==命令用于添加远程主机。
+git remote add命令用于添加远程主机。
 
 ```
 $ git remote add <主机名> <网址>
 ```
-==git remote rm==命令用于删除远程主机。
+git remote rm命令用于删除远程主机。
 
 ```
 $ git remote rm <主机名>
 ```
-==git remote rename==命令用于远程主机的改名。
+git remote rename命令用于远程主机的改名。
 
 ```
 $ git remote rename <原主机名> <新主机名>
