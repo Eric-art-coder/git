@@ -35,6 +35,7 @@ git merge --no-ff dev -m "将master分支merge到dev上去"
 
  使用--no-ff参数后，会执行正常合并，在Master分支上生成一个新节点。为了保证版本演进的清晰，我们希望采用这种做法。关于合并的更多解释，请参考Benjamin Sandofsky的
  [《Understanding the Git Workflow》](http://sandofsky.com/blog/git-workflow.html)
+
   ![image](https://github.com/guimeisang/git/blob/master/img/bg4.png)
 
 ## 三、临时性分支
