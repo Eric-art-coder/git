@@ -1,5 +1,4 @@
 # Git远程操作详细
-> 这个主要是参考[blog](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
 
 详细如下：
 **本文详细介绍了5个基本的git命令**  
@@ -130,3 +129,7 @@ git pull命令的作用是，取回远程主机某个分支的更新，再与本
 ```
 $ git pull <远程主机名> <远程分支名>:<本地分支名>
 ```
+
+## 请自行都用一遍，力争理解到本地仓库和远程仓库，index，本地工作区的之间是怎么联系的。
+> 这个主要是参考[blog](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+
