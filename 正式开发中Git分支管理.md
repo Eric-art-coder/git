@@ -126,8 +126,73 @@ git branch -d release-1.2
 
  (完)
 
+ ## 七、重命名远程分支
+ 在开发中，我们需要管理好自己的分支。  
+ 有一种场景就是本来在dev分支进行开发的，但是为了区别版本号，需要将dev改成v1.2.0版本  
+ 解决的思路就是：先删除远程的分支，然后重命名本地分支，再重新提交一个远程分支。  
 
+ 1. 先查一下所以的分支
+ ```
+$ git branch -av
+* dev                           c38c6b2 异步加载，缓存 commit
+  master                        b70dd0f 有问题的文件上传做个提示...
+  remotes/origin/HEAD           -> origin/master
+  remotes/origin/dev            c38c6b2 异步加载，缓存 commit
+  remotes/origin/master         b70dd0f 有问题的文件上传做个提示...
+  remotes/origin/release-v1.1.0 b70dd0f 有问题的文件上传做个提示...
+ ```
 
+2. 删除远程分支
+```
+$ git push --delete origin dev
+To https://xxx.com/xxx/xxx.git
+ - [deleted]         dev
+```
+
+3. 重命名本地分支：
+```
+git branch -m devel dev-v1.2.0
+```
+
+4. 推送本地分支：
+```
+$ git push origin dev-v1.2.0
+Counting objects: 20, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (20/20), 3.79 KiB | 0 bytes/s, done.
+Total 20 (delta 8), reused 19 (delta 7)
+remote:
+remote: Create merge request for dev-v1.2.0:
+remote:   https://xxx/merge_reque            
+sts/new?merge_request%5Bsource_branch%5D=dev-v1.2.0
+remote:
+To https://xxx.git
+ * [new branch]      dev-v1.2.0 -> dev-v1.2.0
+```
+
+5. 再查看下所有的branch情况
+```
+* dev-v1.2.0                    c38c6b2 异步加载，缓存 commit
+  master                        b70dd0f 有问题的文件上传做个提示...
+  remotes/origin/HEAD           -> origin/master
+  remotes/origin/dev-v1.2.0     c38c6b2 异步加载，缓存 commit
+  remotes/origin/master         b70dd0f 有问题的文件上传做个提示...
+  remotes/origin/release-v1.1.0 b70dd0f 有问题的文件上传做个提示...
+```
+
+6. 在删除远程分支的时候，容易碰到的问题就是如下：
+```
+$ git push --delete origin devel
+remote: error: refusing to delete the current branch: refs/heads/devel
+To git@github.com:zrong/quick-cocos2d-x.git
+ ! [remote rejected] devel (deletion of the current branch prohibited)
+error: failed to push some refs to 'git@github.com:zrong/quick-cocos2d-x.git'
+```
+这是由于在 github 中，devel 是项目的默认分支。要解决此问题，这样操作：  
+- 进入 github 中该项目的 Settings 页面；
+- 设置 Default Branch 为其他的分支（例如 master）；
+- 重新执行删除远程分支命令。
 
 
 
